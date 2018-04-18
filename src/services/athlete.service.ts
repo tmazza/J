@@ -17,6 +17,7 @@ export class AthleteService {
       data => {
         if((data instanceof Array)) {
           this.athletes = data;
+          this.ordena();
         }
       },
       error => console.error(error)
@@ -48,6 +49,16 @@ export class AthleteService {
     this.setList();
   }
 
+  ordena() {
+    this.athletes.sort((a,b) => {
+      let sa = a.name.toLowerCase();
+      let sb = b.name.toLowerCase();
+      if(sa < sb) return -1;
+      if(sa > sb) return 1;
+      return 0;
+    });
+  }
+
   private getCount() {
     return this.storage.get(this.countID).then(data => { 
       let count = JSON.parse(data);
@@ -56,7 +67,6 @@ export class AthleteService {
       } else {
         this.count = count;
       }
-      console.log('count', this.count);
     })
   }
 

@@ -7,12 +7,14 @@ import { AthletesPage } from '../pages/athletes/athletes';
 import { AthleteDetailPage } from '../pages/athlete-detail/athlete-detail';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { MatchDetailPage } from '../pages/match-detail/match-detail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { AthleteService } from '../services/athlete.service';
+import { MatchService } from '../services/match.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { AthleteService } from '../services/athlete.service';
     AthletesPage,
     HomePage,
     TabsPage,
-    AthleteDetailPage
+    AthleteDetailPage,
+    MatchDetailPage
   ],
   imports: [
     BrowserModule,
@@ -33,13 +36,15 @@ import { AthleteService } from '../services/athlete.service';
     AthletesPage,
     HomePage,
     TabsPage,
-    AthleteDetailPage
+    AthleteDetailPage,
+    MatchDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AthleteService
+    AthleteService,
+    MatchService
   ]
 })
 export class AppModule {}

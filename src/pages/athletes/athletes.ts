@@ -17,6 +17,10 @@ export class AthletesPage {
     public athleteService: AthleteService) {
   }
 
+  ionViewDidEnter() {
+    this.athleteService.ordena();
+  }
+
   addAthlete():void {
     this.navCtrl.push(AthleteDetailPage);
   }

@@ -1,13 +1,29 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  <p>
-    Para cadastrar partidas clique em "Nova partida", abaixo.
-  </p>
+  <div *ngIf="!matchservice.matchs">
+    <p>
+      Para cadastrar partidas clique em "Nova partida", abaixo.
+    </p>
+  </div>
+
+  <div *ngIf="matchservice.matchs">
+    <div *ngFor="let m of matchservice.matchs">
+      <div class="item">
+        <!-- (click)="editMatch(m)" -->
+        <!-- <span *ngIf="m.dia"> -->
+            {{m.teams}} - 
+            {{m.players}} - 
+            {{m.athletes.length}}
+        <!-- </span> -->
+        <!-- <span *ngIf="!a.name" class="hint">Não definido.</span>
+        <div style="float:right">
+          <ion-badge *ngIf="a.position==50" color="primary">PIV</ion-badge>
+          <ion-badge *ngIf="a.position==30" color="danger">ARM</ion-badge>
+          <ion-badge *ngIf="a.position==10" color="secondary">ALA</ion-badge>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
 </ion-content>
 
 <ion-footer>
