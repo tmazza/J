@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { AthleteService } from '../../services/athlete.service';
-import { Athlete } from '../../models/athlete';
+import { Athlete } from './../../models/Athlete';
 
 @Component({
   selector: 'page-athlete-detail',
@@ -11,19 +11,19 @@ import { Athlete } from '../../models/athlete';
 export class AthleteDetailPage {
 
   public isNew: boolean = true;
-  public athlete: {
-    name: string,
-    position: number,
-  } = {};
+  public athlete: Athlete;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
     private athleteService: AthleteService,
     public alertCtrl: AlertController) {
-    this.isNew = this.navParams.get('isNew') || false;
-    if(!this.isNew) {
-      this.athlete = this.navParams.get('athlete');
+    this.athlete = this.navParams.get('athlete');
+    this.isNew = !this.athlete;
+    if(this.isNew) {
+      this.athlete = new Athlete();
+    } else {
+      this.athlete = Object.assign({}, this.athlete);
     }
   }
 

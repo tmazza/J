@@ -1,11 +1,3 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Athletes
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
   <div *ngIf="!athleteService.athletes.length">
     <p>
@@ -14,9 +6,17 @@
   </div>
 
   <div *ngIf="athleteService.athletes.length">
-    <ul *ngFor="let a of athleteService.athletes">
-      <li (click)="editAthlete(a)">{{a.name}}</li>
-    </ul>
+    <div *ngFor="let a of athleteService.athletes">
+      <div (click)="editAthlete(a)" class="item">
+        <span *ngIf="a.name">{{a.name}}</span>
+        <span *ngIf="!a.name" class="hint">Não definido.</span>
+        <div style="float:right">
+          <ion-badge *ngIf="a.position==50" color="primary">PIV</ion-badge>
+          <ion-badge *ngIf="a.position==30" color="danger">ARM</ion-badge>
+          <ion-badge *ngIf="a.position==10" color="secondary">ALA</ion-badge>
+        </div>
+      </div>
+    </div>
   </div>
 
 </ion-content>
