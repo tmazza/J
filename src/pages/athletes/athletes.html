@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Athletes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="!athleteService.athletes.length">
+    <p>
+      Para cadastrar atletas clique em "Novo atleta", abaixo.
+    </p>
+  </div>
+
+  <div *ngIf="athleteService.athletes.length">
+    <ul *ngFor="let a of athleteService.athletes">
+      <li (click)="editAthlete(a)">{{a.name}}</li>
+    </ul>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar text-right>
+    <button ion-button color="primary" (click)="addAthlete()">
+      Novo atleta
+    </button>
+  </ion-toolbar>
+</ion-footer>

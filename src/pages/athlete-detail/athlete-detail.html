@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+        <span *ngIf="isNew">Cadastrar atleta</span>
+        <span *ngIf="!isNew">Editar atleta</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div *ngIf="athlete">
+        <ion-item>
+            <ion-input [(ngModel)]="athlete.name" type="text" value="" placeholder="Nome" class='name'></ion-input>
+        </ion-item>
+
+        <ion-list radio-group [(ngModel)]="athlete.position">
+          <ion-item>
+            <ion-label>Pivô</ion-label>
+            <ion-radio value="50"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Armador</ion-label>
+            <ion-radio value="30"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Ala</ion-label>
+            <ion-radio value="10"></ion-radio>
+          </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar text-right>
+    <button ion-button  color="secondary" (click)="save()" *ngIf="isNew">
+        Cadastrar
+    </button>
+    <div *ngIf="!isNew">
+        <button ion-button color="danger" (click)="delete()">
+            Excluir
+        </button>
+        <button ion-button color="secondary" (click)="update()">
+            Atualizar
+        </button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
