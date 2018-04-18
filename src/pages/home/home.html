@@ -1,25 +1,17 @@
 <ion-content padding>
-  <div *ngIf="!matchservice.matchs">
+  <div *ngIf="!matchService.matchs.length">
     <p>
       Para cadastrar partidas clique em "Nova partida", abaixo.
     </p>
   </div>
 
-  <div *ngIf="matchservice.matchs">
-    <div *ngFor="let m of matchservice.matchs">
-      <div class="item">
-        <!-- (click)="editMatch(m)" -->
-        <!-- <span *ngIf="m.dia"> -->
-            {{m.teams}} - 
-            {{m.players}} - 
-            {{m.athletes.length}}
-        <!-- </span> -->
-        <!-- <span *ngIf="!a.name" class="hint">Não definido.</span>
-        <div style="float:right">
-          <ion-badge *ngIf="a.position==50" color="primary">PIV</ion-badge>
-          <ion-badge *ngIf="a.position==30" color="danger">ARM</ion-badge>
-          <ion-badge *ngIf="a.position==10" color="secondary">ALA</ion-badge>
-        </div> -->
+  <div *ngIf="matchService.matchs">
+    <div *ngFor="let m of matchService.matchs">
+      <div class="item" (click)="editMatch(m)">
+        {{m.day}} - 
+        {{m.teams}} - 
+        {{m.players}} - 
+        {{m.athletes.length}}
       </div>
     </div>
   </div>

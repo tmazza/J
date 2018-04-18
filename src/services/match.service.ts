@@ -17,6 +17,7 @@ export class MatchService {
       data => {
         if((data instanceof Array)) {
           this.matchs = data;
+          this.ordena();
         }
       },
       error => console.error(error)
@@ -26,38 +27,36 @@ export class MatchService {
 
   addMatch(match: Match) {
     match.id = this.count++;
-    match.day = "zzzz-yy-xx";
+    let now = new Date();
+    match.day = now.getDate()+'/'+now.getMonth()+'/'+now.getFullYear();
     this.matchs.push(match);
     this.setList();
     this.setCount();
   }
 
-  // updateAthlete(id: number, data: any) {
-  //   let idx = this.athletes.findIndex(elm => elm.id == id);
-  //   if(this.athletes[idx] !== undefined) {
-  //     this.athletes[idx].name = data.name || this.athletes[idx].name;
-  //     this.athletes[idx].position = data.position || this.athletes[idx].position;
-  //     this.setList();
-  //   } else {
-  //     console.log('TODO: return erro...');
-  //   }
-  // }
+  updateMatch(id: number, data: any) {
+    let idx = this.matchs.findIndex(elm => elm.id == id);
+    if(this.matchs[idx] !== undefined) {
+      this.matchs[idx].teams = data.teams || this.matchs[idx].teams;
+      this.matchs[idx].players = data.players || this.matchs[idx].players;
+      this.matchs[idx].athletes = data.athletes || this.matchs[idx].athletes;
+      this.setList();
+    } else {
+      console.log('TODO: return erro...');
+    }
+  }
 
-  // deleteAthlete(id: number) {
-  //   let idx = this.athletes.findIndex(elm => elm.id == id);
-  //   this.athletes.splice(idx, 1);
-  //   this.setList();
-  // }
+  deleteMatch(id: number) {
+    let idx = this.matchs.findIndex(elm => elm.id == id);
+    this.matchs.splice(idx, 1);
+    this.setList();
+  }
 
-  // ordena() {
-  //   this.athletes.sort((a,b) => {
-  //     let sa = a.name.toLowerCase();
-  //     let sb = b.name.toLowerCase();
-  //     if(sa < sb) return -1;
-  //     if(sa > sb) return 1;
-  //     return 0;
-  //   });
-  // }
+  ordena() {
+    this.matchs.sort((a,b) => {
+      return b.id - a.id;
+    });
+  }
 
   private getCount() {
     return this.storage.get(this.countID).then(data => { 

@@ -51,8 +51,8 @@ export class AthleteService {
 
   ordena() {
     this.athletes.sort((a,b) => {
-      let sa = a.name.toLowerCase();
-      let sb = b.name.toLowerCase();
+      let sa = a.name ? a.name.toLowerCase() : null;
+      let sb = b.name ? b.name.toLowerCase() : null;
       if(sa < sb) return -1;
       if(sa > sb) return 1;
       return 0;
