@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { AthleteService } from '../../services/athlete.service';
-import { Athlete } from './../../models/Athlete';
+import { Athlete } from './../../app/models';
 
 @Component({
   selector: 'page-athlete-detail',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Match } from '../models/Match';
-
 import { Storage } from '@ionic/storage';
+
+import { Match } from './../app/models';
 
 @Injectable()
 export class MatchService {

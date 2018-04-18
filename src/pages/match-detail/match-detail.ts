@@ -4,8 +4,7 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { MatchService } from '../../services/match.service';
 import { AthleteService } from '../../services/athlete.service';
 
-import { Athlete } from './../../models/Athlete';
-import { Match } from './../../models/Match';
+import { Athlete, Match } from './../../app/models';
 
 @Component({
   selector: 'page-match-detail',

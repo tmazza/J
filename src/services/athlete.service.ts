@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Athlete } from '../models/Athlete';
-
 import { Storage } from '@ionic/storage';
+
+import { Athlete } from './../app/models';
 
 @Injectable()
 export class AthleteService {

@@ -8,10 +8,16 @@
   <div *ngIf="matchService.matchs">
     <div *ngFor="let m of matchService.matchs">
       <div class="item" (click)="editMatch(m)">
-        {{m.day}} - 
-        {{m.teams}} - 
-        {{m.players}} - 
-        {{m.athletes.length}}
+        <!-- {{m.day}} -  -->
+        <ion-row>
+          <ion-col>
+            <b>{{m.teams}}</b> times<br>
+            <b>{{m.players}}</b> atletas por time<br>
+          </ion-col>
+          <ion-col>
+            <b>{{m.athletes.length}}</b> atletas adicionados
+          </ion-col>
+        </ion-row>
       </div>
     </div>
   </div>

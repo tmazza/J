@@ -4,7 +4,7 @@ import { NavController } from 'ionic-angular';
 import { AthleteService } from '../../services/athlete.service';
 import { AthleteDetailPage } from '../athlete-detail/athlete-detail';
 
-import { Athlete } from './../../models/Athlete';
+import { Athlete } from './../../app/models';
 
 @Component({
   selector: 'page-athletes',

@@ -1,4 +1,9 @@
-import { Athlete } from './Athlete';
+export class Athlete {
+  id: number;
+  name: string;
+  position: number;
+  attendance: number = 0;
+}
 
 export class Match {
   id: number;

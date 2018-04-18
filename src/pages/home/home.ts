@@ -3,7 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import { MatchService } from '../../services/match.service';
 import { MatchDetailPage } from '../match-detail/match-detail';
-import { Match } from './../../models/Match';
+
+import { Match } from './../../app/models';
 
 @Component({
   selector: 'page-home',
