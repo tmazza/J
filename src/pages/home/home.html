@@ -7,8 +7,7 @@
 
   <div *ngIf="matchService.matchs">
     <div *ngFor="let m of matchService.matchs">
-      <div class="item" (click)="editMatch(m)">
-        <!-- {{m.day}} -  -->
+      <div class="item" (click)="viewMatch(m)">
         <ion-row>
           <ion-col>
             <b>{{m.teams}}</b> times<br>

@@ -1,10 +1,17 @@
 page-athletes {
 	.item {
-		padding: 6px;
-		border-bottom: 1px solid #ddd; 
+		padding: 2px;
+		border-bottom: 1px solid #f2f2f2; 
 		margin-bottom: 2px;
+	}
+	.item .badge {
+		margin-right: 6px; 
 	}
 	.hint {
 		color: #ddd;
+	}
+	.col {
+		padding: 0px;
+		padding-right: 6px; 
 	}
 }

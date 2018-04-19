@@ -1,0 +1,19 @@
+page-match-view {
+	.item {
+		padding: 3px;
+		border-bottom: 1px solid #f2f2f2; 
+	}
+	.hint {
+		color: #ddd;
+	}
+	.team-title {
+		background: #eaeaea;
+	    // padding: 6px;
+	    font-weight: bold;
+	    border-top-left-radius: 5px;
+	    border-top-right-radius: 5px;
+	}
+	.team .badge {
+		margin-right: 6px; 
+	}
+}

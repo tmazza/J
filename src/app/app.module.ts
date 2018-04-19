@@ -8,6 +8,7 @@ import { AthleteDetailPage } from '../pages/athlete-detail/athlete-detail';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MatchDetailPage } from '../pages/match-detail/match-detail';
+import { MatchViewPage } from '../pages/match-view/match-view';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +24,8 @@ import { MatchService } from '../services/match.service';
     HomePage,
     TabsPage,
     AthleteDetailPage,
-    MatchDetailPage
+    MatchDetailPage,
+    MatchViewPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { MatchService } from '../services/match.service';
     HomePage,
     TabsPage,
     AthleteDetailPage,
-    MatchDetailPage
+    MatchDetailPage,
+    MatchViewPage
   ],
   providers: [
     StatusBar,

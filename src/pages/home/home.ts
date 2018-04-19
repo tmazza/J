@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { MatchService } from '../../services/match.service';
 import { MatchDetailPage } from '../match-detail/match-detail';
+import { MatchViewPage } from '../match-view/match-view';
 
 import { Match } from './../../app/models';
 
@@ -25,8 +26,8 @@ export class HomePage {
     this.navCtrl.push(MatchDetailPage);
   }
 
-  editMatch(match: Match):void {
-    this.navCtrl.push(MatchDetailPage, {
+  viewMatch(match: Match):void {
+    this.navCtrl.push(MatchViewPage, {
       match: match,      
     });
   }

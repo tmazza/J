@@ -3,6 +3,8 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { MatchService } from '../../services/match.service';
 import { AthleteService } from '../../services/athlete.service';
+import { MatchViewPage } from '../match-view/match-view';
+import { HomePage } from '../home/home';
 
 import { Athlete, Match } from './../../app/models';
 
@@ -51,7 +53,10 @@ export class MatchDetailPage {
       }
     }
     this.matchService.addMatch(this.match);
-    this.navCtrl.pop();
+    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.push(MatchViewPage, {
+      match: this.match,      
+    });
   }
 
   update() {
@@ -75,7 +80,7 @@ export class MatchDetailPage {
           text: 'Excluir',
           handler: data => {
             this.matchService.deleteMatch(this.match.id);
-            this.navCtrl.pop(); 
+            this.navCtrl.setRoot(HomePage); 
           }
         }
       ]
