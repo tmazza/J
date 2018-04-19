@@ -1,3 +1,25 @@
 page-match-detail {
-
+	.item {
+		padding-left: 0px;
+		border-bottom: 1px solid #dadada;
+	    border-right: 1px solid #dadada;
+	}
+	.item-block {
+		height: 20px!important;
+		max-height: 20px!important;
+	}
+	.item-inner {
+		border: 0px!important; 
+	}
+	.checkbox {
+		margin: 0px!important;
+		margin-right: 6px!important;
+	}
+	.item-box {
+		padding: 2px;
+		border: 1px solid red;
+	}
+	.col {
+		padding: 1px; 
+	}
 }

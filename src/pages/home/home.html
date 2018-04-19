@@ -10,11 +10,12 @@
       <div class="item" (click)="viewMatch(m)">
         <ion-row>
           <ion-col>
-            <b>{{m.teams}}</b> times<br>
+            <b>{{m.number_teams}}</b> times<br>
             <b>{{m.players}}</b> atletas por time<br>
           </ion-col>
           <ion-col>
-            <b>{{m.athletes.length}}</b> atletas adicionados
+            <b>{{m.athletes.length}}</b> atletas adicionados<br>
+            <span class="hint">Criado em {{m.day}}</span>
           </ion-col>
         </ion-row>
       </div>

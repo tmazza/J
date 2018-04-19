@@ -3,12 +3,16 @@ page-match-view {
 		padding: 3px;
 		border-bottom: 1px solid #f2f2f2; 
 	}
+	.item-inline {
+		display: inline-block;;
+		border: 1px solid #f2f2f2; 
+		margin: 0px 4px;
+	}
 	.hint {
 		color: #ddd;
 	}
 	.team-title {
 		background: #eaeaea;
-	    // padding: 6px;
 	    font-weight: bold;
 	    border-top-left-radius: 5px;
 	    border-top-right-radius: 5px;

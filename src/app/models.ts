@@ -8,7 +8,9 @@ export class Athlete {
 export class Match {
   id: number;
   day: string;
-  teams: number = 4;
+  number_teams: number = 4;
   players: number = 6;
   athletes: Array<Athlete> = [];
+  teams: any = [];
+  noTeam: Array<Athlete> = [];
 }

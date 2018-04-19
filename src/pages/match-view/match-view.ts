@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { MatchDetailPage } from '../match-detail/match-detail';
-import { Athlete, Match } from './../../app/models';
+import { MatchService } from '../../services/match.service';
+import { Match } from './../../app/models';
 
 @Component({
   selector: 'page-match-view',
@@ -11,15 +12,17 @@ import { Athlete, Match } from './../../app/models';
 export class MatchViewPage {
 
   match:Match;
-  noTeam:Array<Athlete> = [];
-  teams:any = undefined;
-
+  
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    public matchService: MatchService) {
     this.match = this.navParams.get('match');
     if(!this.match) {
       this.navCtrl.pop();
+    }
+    if(!this.match.teams.length) {
+      this.createTeams();
     }
   }
 
@@ -37,7 +40,7 @@ export class MatchViewPage {
 
     let teams = [];
     for(let i = 0; i < this.match.athletes.length; i++) {
-      let round = i % this.match.teams;
+      let round = i % this.match.number_teams;
       if(teams[round] === undefined) {
         teams[round] = [];
       }
@@ -54,8 +57,9 @@ export class MatchViewPage {
       }
     }
 
-    this.teams = teams;
-    this.noTeam = a.concat(b).concat(c);
+    this.match.teams = teams;
+    this.match.noTeam = a.concat(b).concat(c);
+    this.matchService.updateMatch(this.match.id, this.match);
 
   }
 

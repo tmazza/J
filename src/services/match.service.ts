@@ -37,9 +37,11 @@ export class MatchService {
   updateMatch(id: number, data: any) {
     let idx = this.matchs.findIndex(elm => elm.id == id);
     if(this.matchs[idx] !== undefined) {
-      this.matchs[idx].teams = data.teams || this.matchs[idx].teams;
+      this.matchs[idx].number_teams = data.number_teams || this.matchs[idx].number_teams;
       this.matchs[idx].players = data.players || this.matchs[idx].players;
       this.matchs[idx].athletes = data.athletes || this.matchs[idx].athletes;
+      this.matchs[idx].noTeam = data.noTeam || this.matchs[idx].noTeam;
+      this.matchs[idx].teams = data.teams || this.matchs[idx].teams;
       this.setList();
     } else {
       console.log('TODO: return erro...');
