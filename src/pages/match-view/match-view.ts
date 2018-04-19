@@ -36,7 +36,7 @@ export class MatchViewPage {
 
     let a = this.match.athletes.filter(i => i.position == 50);
     let b = this.match.athletes.filter(i => i.position == 30);
-    let c = this.match.athletes.filter(i => i.position == 10);
+    let c = this.match.athletes.filter(i => i.position != 50 && i.position != 30);
 
     let teams = [];
     for(let i = 0; i < this.match.athletes.length; i++) {
