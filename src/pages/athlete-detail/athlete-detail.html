@@ -37,20 +37,18 @@
         <ion-radio value="10"></ion-radio>
       </ion-item>
     </ion-list>
-</ion-content>
-
-<ion-footer>
-  <ion-toolbar text-right>
-    <button small ion-button  color="secondary" (click)="save()" *ngIf="isNew">
-        Cadastrar
-    </button>
-    <div *ngIf="!isNew">
-        <button small ion-button color="danger" (click)="delete()">
-            Excluir
-        </button>
-        <button small ion-button color="secondary" (click)="update()">
-            Atualizar
-        </button>
+    <hr>  
+    <div text-right>
+      <button small ion-button  color="secondary" (click)="save()" *ngIf="isNew">
+          Cadastrar
+      </button>
+      <div *ngIf="!isNew">
+          <button small ion-button color="danger" (click)="delete()">
+              Excluir
+          </button>
+          <button small ion-button color="secondary" (click)="update()">
+              Atualizar
+          </button>
+      </div>
     </div>
-  </ion-toolbar>
-</ion-footer>
+</ion-content>
