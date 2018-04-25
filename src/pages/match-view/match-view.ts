@@ -36,7 +36,9 @@ export class MatchViewPage {
 
     let a = this.match.athletes.filter(i => i.position == 50);
     let b = this.match.athletes.filter(i => i.position == 30);
-    let c = this.match.athletes.filter(i => i.position != 50 && i.position != 30);
+    let c = this.match.athletes.filter(i => i.position == 10);
+    let d = this.match.athletes.filter(i => i.position == 8);
+    let e = this.match.athletes.filter(i => i.position!=50 && i.position!=30 && i.position!=10 && i.position!=8);
 
     let teams = [];
     for(let i = 0; i < this.match.athletes.length; i++) {
@@ -52,13 +54,17 @@ export class MatchViewPage {
           athlete = b.splice(Math.floor((Math.random() * b.length)), 1)[0];
         } else if(c.length > 0) {
           athlete = c.splice(Math.floor((Math.random() * c.length)), 1)[0];
+        } else if(d.length > 0) {
+          athlete = d.splice(Math.floor((Math.random() * d.length)), 1)[0];
+        } else if(e.length > 0) {
+          athlete = e.splice(Math.floor((Math.random() * e.length)), 1)[0];
         }
         teams[round].push(athlete);
       }
     }
 
     this.match.teams = teams;
-    this.match.noTeam = a.concat(b).concat(c);
+    this.match.noTeam = a.concat(b).concat(c).concat(d).concat(e);
     this.matchService.updateMatch(this.match.id, this.match);
 
   }

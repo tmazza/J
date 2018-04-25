@@ -12,9 +12,11 @@
           <span *ngIf="a.name">{{a.name}}</span>
           <span *ngIf="!a.name" class="hint">Não definido.</span>
           <div style="float:left">
-            <ion-badge *ngIf="a.position==50" color="primary">PV</ion-badge>
-            <ion-badge *ngIf="a.position==30" color="danger">AR</ion-badge>
-            <ion-badge *ngIf="a.position==10" color="secondary">AL</ion-badge>
+            <ion-badge *ngIf="a.position==50" color="primary">A</ion-badge>
+            <ion-badge *ngIf="a.position==30" color="danger">B</ion-badge>
+            <ion-badge *ngIf="a.position==10" color="secondary">C</ion-badge>
+            <ion-badge *ngIf="a.position==8" color="third">D</ion-badge>
+            <ion-badge *ngIf="a.position==6" color="fourty">E</ion-badge>
           </div>
         </div>
       </ion-col>

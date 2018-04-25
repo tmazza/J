@@ -18,9 +18,11 @@
           <ion-item>
                 <ion-label>
                     <div style="float:right;">
-                      <ion-badge *ngIf="a.model.position==50" color="light">PV</ion-badge>
-                      <ion-badge *ngIf="a.model.position==30" color="light">AR</ion-badge>
-                      <ion-badge *ngIf="a.model.position==10" color="light">AL</ion-badge>
+                      <ion-badge *ngIf="a.model.position==50" color="primary">A</ion-badge>
+                      <ion-badge *ngIf="a.model.position==30" color="danger">B</ion-badge>
+                      <ion-badge *ngIf="a.model.position==10" color="secondary">C</ion-badge>
+                      <ion-badge *ngIf="a.model.position==8" color="third">D</ion-badge>
+                      <ion-badge *ngIf="a.model.position==6" color="fourty">E</ion-badge>
                     </div>
                     &nbsp;{{a.model.name}}
                 </ion-label>
